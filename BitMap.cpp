@@ -9,7 +9,12 @@
 
 BitMap::BitMap()
 {
+
     int j;
+    for(j=0; j< MAPSZ; j++)
+    {
+        map[j] = 0;
+    }
     mask[MASKSZ-1] = 1;
     for(j= MASKSZ-2; j>=0; j--)
     {

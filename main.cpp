@@ -54,8 +54,8 @@ static void shell()
     }
     for(i=0; i<list_of_processing_commands.size(); i+=2)
     {
-        output_with_TLB<<m.addr_command_processing(std::stoi(list_of_processing_commands[i]), std::stoi(list_of_processing_commands[i+1]), true);
-       // output_without_TLB<<m.addr_command_processing(std::stoi(list_of_processing_commands[i]), std::stoi(list_of_processing_commands[i+1]), false);
+       output_with_TLB<<m.addr_command_processing(std::stoi(list_of_processing_commands[i]), std::stoi(list_of_processing_commands[i+1]), true);
+       output_without_TLB<<m.addr_command_processing(std::stoi(list_of_processing_commands[i]), std::stoi(list_of_processing_commands[i+1]), false);
     }
     
 }
