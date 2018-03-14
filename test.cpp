@@ -1,20 +1,28 @@
-#include<cstring>
-#include<iostream>
-#include "Helper.cpp"
+#include <iostream>
+#include <fstream>
+#include "MainMem.hpp"
+#include <unistd.h>
+#include <vector>
+#include <sys/wait.h>
+class point
+{
+    public:
+        point(){ x = 9; y = 5;}
+        void set(){x = 10; y = 20;}
+        void print_point(){std::cout<<x<<std::endl; std::cout<<y<<std::endl;}
+    private:
+        int x;
+        int y;
+};
+void set_p(point & p)
+{
+    p.set();
+}
 int main()
 {
-    int temp[128];
-    std::cout<<sizeof(temp)/sizeof(int)<<std::endl;
-    helper::custom_memset<int>(temp, 0, 128);
-    helper::custom_memset<int>(temp+4, 5, 16);
-    std::cout<<*(temp+3)<<std::endl;
-    //std::memset((temp+index_open_bmap_pair*FRAMESZ), 5, (index_open_bmap_pair * FRAMESZ + 2* FRAMESZ));
-    
-         int i;
-         for(i=0; i < 128; i++)
-         {
-             //temp[i] = 0;
-             std::cout<<temp[i];
-         }
-        return 0;
+    point z;
+    z.print_point();
+    set_p(z);
+    z.print_point();
+
 }
